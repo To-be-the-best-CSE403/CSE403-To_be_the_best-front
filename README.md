@@ -17,7 +17,11 @@ Learn more about the features of the Pokemon Showdown ToBeTheBest extension.
 - **Team Builder**: Click on the "Team Builder" button in the extension popup to open the team builder. It shows information about Pokemon usage and suggested movesets.
 
 ## Repository Layout
-The layout of the repository is as follows:
+- public: contains the static files for the extension.
+- src: contains the source code for the extension.
+  - components: contains the React components for the extension.
+- configs
+  
 
 ## For Developers
 
