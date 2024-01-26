@@ -1,0 +1,104 @@
+#tobethebest-root * {
+  margin: 0;  /* Reset the default margin */
+  padding: 0; /* Reset the default padding */
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+#tobethebest-root {
+  position: fixed;
+  top: 56;
+  right: 0;
+  background: transparent;
+}
+
+#tobethebest-toggle {
+  position: fixed;
+  opacity: 0;
+  top: 50%;
+  right: 0;
+  width: 0;
+  height: 150px;
+  transform: translateY(-50%);
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  transition: width 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+#tobethebest-toggle.active {
+  width: 25px;
+  opacity: 1;
+}
+
+#tobethebest-toggle__text {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(-180deg);
+  writing-mode: vertical-rl;
+}
+
+#tobethebest-sidebar {
+  position: fixed;
+  opacity: 0;
+  top: 56;
+  right: 0;
+  width: 0;
+  height: calc(100% - 56px);
+  transition: width 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+#tobethebest-sidebar.active {
+  width: 250px;
+  opacity: 1;
+}
+
+#tobethebest-sidebar__container {
+  background-color: aqua;
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tobethebest-sidebar__component {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tobethebest-sidebar__component button {
+  width: 150px;
+  height: 30px;
+  border-radius: 4px;
+  background-color: black;
+  border: solid 1px white;
+  color: white;
+  font-size: 14px;
+  font-family: monospace;
+  cursor: pointer;
+}
+
+#tobethebest-sidebar-header {
+  background-color: blue;
+  height: fit-content;
+}
+
+#tobethebest-sidebar-teambuilder {
+  background-color: red;
+  height: 40%;
+}
+
+#tobethebest-sidebar-resources {
+  background-color: green;
+  height: 20%;
+}
+
+
