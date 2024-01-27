@@ -1,0 +1,50 @@
+@startuml
+
+class Document {
+}
+
+class Body {
+}
+
+class RootContainer {
+  - id: tobethebest-root
+}
+
+class Toggle {
+  - id: tobethebest-toggle
+  - state: active
+  + toggleVisibilityOnMouseover()
+}
+
+class Sidebar {
+  - id: tobethebest-sidebar
+  + toggleVisibilityOnMouseleave()
+}
+
+class SidebarContainer {
+  - id: tobethebest-sidebar__container
+}
+
+class SidebarHeader {
+  - id: tobethebest-sidebar-header
+}
+
+class SidebarTeamBuilder {
+  - id: tobethebest-sidebar-teambuilder
+}
+
+class SidebarResources {
+  - id: tobethebest-sidebar-resources
+}
+
+
+Document --> Body
+Body --> RootContainer
+RootContainer --> Toggle
+RootContainer --> Sidebar
+Sidebar --> SidebarContainer
+SidebarContainer --> SidebarHeader
+SidebarContainer --> SidebarTeamBuilder
+SidebarContainer --> SidebarResources
+
+@enduml
