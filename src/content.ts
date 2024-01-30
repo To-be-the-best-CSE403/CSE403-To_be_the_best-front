@@ -1,93 +1,69 @@
-const body = document.body;
+///<reference types="chrome"/>
 
-const root = document.createElement('div');
-root.id = "tobethebest-root";
+fetch(chrome.runtime.getURL('content.html'))
+    .then(response => response.text())
+    .then(html => {
+        // Create a container element
+        const container = document.createElement('div');
+        container.innerHTML = html.trim();
+        container.id = 'tobethebest-root';
 
-const toggle = document.createElement("div");
-toggle.id = "tobethebest-toggle";
-toggle.classList.add("active");
+        // Append the container element to the body
+        document.body.appendChild(container);
 
-const toggle_text = document.createElement("p");
-toggle_text.id = "tobethebest-toggle__text";
-toggle_text.innerText = "ToBeTheBest";
+        // Add event listeners or any additional logic here
+        const toggle = container.querySelector('#tobethebest-toggle');
+        if (toggle == null) {
+            throw new Error('Could not find #tobethebest-toggle element');
+        }
+        
+        const sidebar = container.querySelector('#tobethebest-sidebar');
+        if (sidebar == null) {
+            throw new Error('Could not find #tobethebest-sidebar element');
+        }
 
-const sidebar = document.createElement("div");
-sidebar.id = "tobethebest-sidebar";
+        toggle.addEventListener('mouseover', () => {
+            sidebar.classList.add('active');
+            toggle.classList.remove('active');
+        });
 
-const sidebar_container = document.createElement("div");
-sidebar_container.id = "tobethebest-sidebar__container";
+        sidebar.addEventListener('mouseleave', () => {
+            sidebar.classList.remove('active');
+            toggle.classList.add('active');
+        });
 
-const sidebar_header = document.createElement("div");
-sidebar_header.id = "tobethebest-sidebar-header";
-sidebar_header.classList.add("tobethebest-sidebar__component");
+        const websiteButton = container.querySelector('#tobethebest-website-button');
+        if (websiteButton == null) {
+            throw new Error('Could not find #tobethebest-website-button element');
+        }
+        websiteButton.addEventListener('click', () => {
+            window.open('https://tobethebest.vercel.app/', '_blank');
+        });
 
-const sidebar_teambuilder = document.createElement("div");
-sidebar_teambuilder.id = "tobethebest-sidebar-teambuilder";
-sidebar_teambuilder.classList.add("tobethebest-sidebar__component");
+        const wikiButton = container.querySelector('#tobethebest-wiki-button');
+        if (wikiButton == null) {
+            throw new Error('Could not find #tobethebest-wiki-button element');
+        }
+        wikiButton.addEventListener('click', () => {
+            window.open('https://tobethebest.vercel.app/', '_blank');
+        });
 
-const sidebar_resources = document.createElement("div");
-sidebar_resources.id = "tobethebest-sidebar-resources";
-sidebar_resources.classList.add("tobethebest-sidebar__component");
+        const githubButton = container.querySelector('#tobethebest-github-button');
+        if (githubButton == null) {
+            throw new Error('Could not find #tobethebest-github-button element');
+        }
+        githubButton.addEventListener('click', () => {
+            window.open('https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front', '_blank');
+        });
 
-const sidebar_header_title = document.createElement("h1");
-sidebar_header_title.innerText = "ToBeTheBest";
-
-const sidebar_teambuilder_title = document.createElement("h2");
-sidebar_teambuilder_title.innerText = "Team Builder";
-
-const sidebar_resources_title = document.createElement("h2");
-sidebar_resources_title.innerText = "Resources";
-
-const sidebar_teambuilder_button = document.createElement("button");
-sidebar_teambuilder_button.innerText = "Create Team";
-
-const sidebar_website_button = document.createElement("button");
-sidebar_website_button.innerText = "Website";
-sidebar_website_button.onclick = () => {
-    window.open("https://tobethebest.vercel.app/", "_blank");
-}
-
-const sidebar_wiki_button = document.createElement("button");
-sidebar_wiki_button.innerText = "Wiki";
-sidebar_wiki_button.onclick = () => {
-    window.open("https://tobethebest.vercel.app/", "_blank");
-}
-
-const sidebar_github_button = document.createElement("button");
-sidebar_github_button.innerText = "Github";
-sidebar_github_button.onclick = () => {
-    window.open("https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front", "_blank");
-}
-
-toggle.onmouseover = () => {
-    sidebar.classList.add("active");
-    toggle.classList.remove("active");
-}
-
-sidebar.onmouseleave = () => {
-    sidebar.classList.remove("active");
-    toggle.classList.add("active");
-}
-
-toggle.appendChild(toggle_text);
-
-sidebar_header.appendChild(sidebar_header_title);
-
-sidebar_teambuilder.appendChild(sidebar_teambuilder_title);
-sidebar_teambuilder.appendChild(sidebar_teambuilder_button);
-
-sidebar_resources.appendChild(sidebar_resources_title);
-sidebar_resources.appendChild(sidebar_website_button);
-sidebar_resources.appendChild(sidebar_wiki_button);
-sidebar_resources.appendChild(sidebar_github_button);
-
-sidebar_container.appendChild(sidebar_header);
-sidebar_container.appendChild(sidebar_teambuilder);
-sidebar_container.appendChild(sidebar_resources);
-
-sidebar.appendChild(sidebar_container);
-
-root.appendChild(sidebar);
-root.appendChild(toggle);
-
-body.appendChild(root);
+        const teamBuilderButton = container.querySelector('#tobethebest-teambuilder-button');
+        if (teamBuilderButton == null) {
+            throw new Error('Could not find #tobethebest-teambuilder-button element');
+        }
+        teamBuilderButton.addEventListener('click', () => {
+            // Add your logic for the "Create Team" button click here
+        });
+    })
+    .catch(error => {
+        console.error('Error fetching content HTML:', error);
+    });

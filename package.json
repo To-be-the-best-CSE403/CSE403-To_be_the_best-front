@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp src/content.ts dist/ && cp src/content.css dist/",
+    "build": "tsc && vite build && cp src/content.ts dist/ && cp src/content.css dist/ && cp src/content.html dist/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/chrome": "^0.0.259",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

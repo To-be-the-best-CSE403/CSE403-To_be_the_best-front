@@ -18,5 +18,11 @@
      "js": ["content.ts"],
      "css": ["content.css"]
    }
- ]
+ ],
+ "web_accessible_resources": [
+   {
+      "resources": ["content.html"],
+      "matches": ["http://*/*", "https://*/*"]
+   }
+  ]
 }
