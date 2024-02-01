@@ -12,6 +12,16 @@ if (teampane != null) {
     button.classList.add('button');
     button.classList.add('big');
 
+    button.addEventListener('click', () => {
+        fetch("https://tobethebest.vercel.app/api/test/teambuilder")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        }).catch(error => {
+            console.error('Error:', error);
+        })
+    });
+
     container.appendChild(title);
     container.appendChild(button);
 
