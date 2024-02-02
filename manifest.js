@@ -40,6 +40,11 @@ const manifest = {
       matches: ['*://*/*'],
     },
   ],
+  browser_specific_settings: {
+    gecko: {
+      id: "tobethebest.team@gmail.com"
+    }
+  }
 };
 
 export default manifest;
