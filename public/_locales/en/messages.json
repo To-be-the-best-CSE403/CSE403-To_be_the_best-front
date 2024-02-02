@@ -1,0 +1,10 @@
+{
+  "extensionDescription": {
+    "description": "ToBeTheBest Extension Description",
+    "message": "ToBeTheBest Extension Description Message"
+  },
+  "extensionName": {
+    "description": "ToBeTheBest",
+    "message": "ToBeTheBest"
+  }
+}

@@ -1,11 +1,11 @@
-#tobethebest-root * {
+#tobethebest-shadow-root * {
   margin: 0;  /* Reset the default margin */
   padding: 0; /* Reset the default padding */
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-#tobethebest-root {
+#tobethebest-shadow-root {
   position: fixed;
   top: 56;
   right: 0;
@@ -100,5 +100,3 @@
   background-color: green;
   height: 20%;
 }
-
-
