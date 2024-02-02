@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "11.1.5",
+    "@testing-library/jest-dom": "^6.4.1",
     "@testing-library/react": "14.0.0",
     "@types/chrome": "0.0.251",
     "@types/node": "20.8.10",
