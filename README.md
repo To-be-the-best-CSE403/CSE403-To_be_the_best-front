@@ -54,6 +54,40 @@ npm run build
 
 To see the extension in action, open Chrome and go to `chrome://extensions/`. Make sure that the `Developer mode` checkbox in the top right corner is checked. Then click `Load unpacked` and select the `dist` folder in the project directory.
 
+### Testing
+To run the tests, use the following command:
+
+```bash
+npm run test
+```
+
+Example of a test snippet:
+
+```tsx
+// Import necessary modules
+import { render, screen } from '@testing-library/react';
+import ComponentToTest from './ComponentToTest';
+
+// Describe the component or functionality being tested
+describe('ComponentToTest', () => {
+  // Describe the specific test case
+  test('should render without errors', () => {
+    // Arrange: Render the component
+    render(<ComponentToTest />);
+    
+    // Act: Perform actions (if any)
+    
+    // Assert: Make assertions about what is expected
+    // Test that the component renders without throwing an error
+    const component = screen.getByTestId('component-to-test');
+    expect(component).toBeInTheDocument();
+    
+    // Additional assertions can be added here
+  });
+  
+  // Add more test cases as needed
+});
+```
 
 ## Coding Guidelines
 
