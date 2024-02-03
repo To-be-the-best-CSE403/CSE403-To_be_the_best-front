@@ -19,12 +19,17 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
+    - name: Run Tests
+      run: npm run test
+
     - name: Build
+      if: success()
       run: |-
         npm run build:firefox
         zip -r firefox-extension-${{ github.event.pull_request.head.sha }}.zip dist
         
     - name: Archive Extension Artifact
+      if: success()
       uses: actions/upload-artifact@v2
       with:
         name: firefox-extension-${{ github.sha }}
@@ -45,12 +50,17 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Run Tests
+        run: npm run test
+
       - name: Build
+        if: success()
         run: |-
           npm run build
           zip -r chrome-extension-${{ github.event.pull_request.head.sha }}.zip dist
           
       - name: Archive Extension Artifact
+        if: success()
         uses: actions/upload-artifact@v2
         with:
           name: chrome-extension-${{ github.sha }}
