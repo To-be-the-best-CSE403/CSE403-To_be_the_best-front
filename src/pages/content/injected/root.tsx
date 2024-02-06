@@ -5,19 +5,18 @@ import browser from 'webextension-polyfill';
 
 refreshOnUpdate('pages/content');
 
-let loaded = false;
-
-const createTeampane = () => {
-    if (loaded) return;
-    
+const createTeampane = () => {    
     const teampane = document.getElementsByClassName('teampane')[0];
+
     if (teampane) {
-        const root = document.createElement('div');
-        root.id = 'tobethebest-teampane-root';
-        teampane.appendChild(root);
+        let root = document.getElementById('tobethebest-teampane-root');
+        if (!root) {
+            root = document.createElement('div');
+            root.id = 'tobethebest-teampane-root';
+            teampane.appendChild(root);
+        }
         
         createRoot(root).render(<App />);
-        loaded = true;
     }
 };
 
