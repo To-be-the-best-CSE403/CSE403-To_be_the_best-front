@@ -29,15 +29,15 @@ const manifest = {
   },
   content_scripts: [
     {
-      matches: ['http://*/*', 'https://*/*', '<all_urls>'],
+      matches: ['https://play.pokemonshowdown.com/*'],
       js: ['src/pages/contentSidebar/index.js', 'src/pages/contentInjected/index.js'],
+      run_at: 'document_end',
     },
-
   ],
   web_accessible_resources: [
     {
       resources: ['assets/js/*.js', 'assets/css/*.css', 'icon-128.png', 'icon-34.png'],
-      matches: ['*://*/*'],
+      matches: ['https://play.pokemonshowdown.com/*'],
     },
   ],
   browser_specific_settings: {
