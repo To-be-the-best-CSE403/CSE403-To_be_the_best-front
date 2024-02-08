@@ -1,30 +1,15 @@
-import React from 'react';
 import '@pages/popup/Popup.css';
-import useStorage from '@src/shared/hooks/useStorage';
-import exampleThemeStorage from '@src/shared/storages/exampleThemeStorage';
 import withSuspense from '@src/shared/hoc/withSuspense';
 import withErrorBoundary from '@src/shared/hoc/withErrorBoundary';
 
 const Popup = () => {
-  const theme = useStorage(exampleThemeStorage);
 
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor: theme === 'light' ? '#fff' : '#000',
-      }}>
-      <header className="App-header" style={{ color: theme === 'light' ? '#000' : '#fff' }}>
-        <h1>ToBeTheBest</h1>
-        <button
-          style={{
-            backgroundColor: theme === 'light' ? '#fff' : '#000',
-            color: theme === 'light' ? '#000' : '#fff',
-          }}
-          onClick={exampleThemeStorage.toggle}>
-          Toggle theme
-        </button>
-      </header>
+    <div className="App">
+     <h1>ToBeTheBest</h1>
+     <button onClick={() => window.open('https://tobethebest.vercel.app', '_blank')}>
+      Website
+     </button>
     </div>
   );
 };
