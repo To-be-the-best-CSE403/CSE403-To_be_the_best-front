@@ -3,8 +3,12 @@
 A Chrome extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) including features such as a team builder, damage calculator, and more! The extension aims to assist users in creating powerful teams, understanding move sets, and making informed decisions during battles.
 
 ## Quick Start
-- **Step 1**: Install the ToBeTheBest Extension on the [Chrome Web Store](https://chromewebstore.google.com/) (Not yet available)
-- **Step 2**: Go to [Pokemon Showdown](https://play.pokemonshowdown.com/) and activate the extension.
+- **Step 1**: Install the ToBeTheBest Extension
+  - **Firefox**: See latest release for Firefox
+  - **Chrome**: See latest release for Chrome
+- **Step 2**: Go to [Pokemon Showdown](https://play.pokemonshowdown.com/) and activate the extension. 
+  - **Firefox**: Go to extension setting and choose "Always Allow on play.pokemonshowdown.com".
+  - **Chrome**: Go to extension setting and allow the extension for play.pokemonshowdown.com.
 
 ## Features
 Learn more about the features of the Pokemon Showdown ToBeTheBest extension.
@@ -46,13 +50,24 @@ npm run dev
 Open localhost in your browser to see the extension.
 
 ### Building the extension
-To build the extension, run the following command:
+
+#### Chrome
+To build the extension the extension for Chrome, use the following command:
 
 ```bash
 npm run build
 ```
 
 To see the extension in action, open Chrome and go to `chrome://extensions/`. Make sure that the `Developer mode` checkbox in the top right corner is checked. Then click `Load unpacked` and select the `dist` folder in the project directory.
+
+#### Firefox
+To build the extension for Firefox, use the following command:
+
+```bash
+npm run build:firefox
+```
+
+To see the extension in action, open Firefox and go to `about:debugging#/runtime/this-firefox`. Click `Load Temporary Add-on...` and select the `manifest.json` file in the `dist` folder in the project directory.
 
 ### Testing
 To run the tests, use the following command:
