@@ -10,12 +10,15 @@ export default function App() {
   const [archetype, setArchetype] = useState('HO'); // Default HO (Hyper Offense)
 
   const doCreateTeamClick = () => {
-    fetch(API_ENDPOINTS.TEAMBUILDER_TEST)
+    const url = new URL(API_ENDPOINTS.TEAMBUILDER);
+    url.searchParams.append('archetype', archetype);
+
+    fetch(url)
       .then(response => response.json())
       .then(data => {
         console.log('[ToBeTheBest] Team created:', data);
 
-        const teamName = 'gen9ou]ToBeTheBest';
+        const teamName = 'gen9ou]ToBeTheBest-' + archetype;
         const teamPacked = Teams.pack(data);
         const team = teamName.concat('|', teamPacked);
         console.log('[ToBeTheBest] Team packed:', team);
