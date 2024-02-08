@@ -63,7 +63,7 @@ export default function App() {
               onClick={() =>
                 window.open('https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front', '_blank')
               }>
-              GitHub
+              Github
             </button>
           </div>
         </div>
