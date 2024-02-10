@@ -1,49 +1,28 @@
 import { useEffect, useState } from 'react';
-import { API_ENDPOINTS } from '@root/src/api';
-import { Teams } from '@pkmn/sim';
+import { createTeam } from '@src/api';
 
 export default function App() {
   useEffect(() => {
     console.log('tobethebest teampane injected');
   }, []);
 
-  const [archetype, setArchetype] = useState('HO'); // Default HO (Hyper Offense)
-
   const doCreateTeamClick = () => {
-    const url = new URL(API_ENDPOINTS.TEAMBUILDER);
-    url.searchParams.append('archetype', archetype);
+    createTeam(archetype);
+  }
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
-        console.log('[ToBeTheBest] Team created:', data);
-
-        const teamName = 'gen9ou]ToBeTheBest-' + archetype;
-        const teamPacked = Teams.pack(data);
-        const team = teamName.concat('|', teamPacked);
-        console.log('[ToBeTheBest] Team packed:', team);
-
-        const showdownTeams = localStorage.getItem('showdown_teams');
-        localStorage.setItem('showdown_teams', showdownTeams ? showdownTeams.concat('\n', team) : team);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-  };
+  const [archetype, setArchetype] = useState('HO'); // Default HO (Hyper Offense)
 
   return (
     <div id="tobethebest-teampane-container">
       <h2>ToBeTheBest</h2>
-      <p>
-        <label className="label" htmlFor="archetype">Select Team Archetype:</label>
-        <select className="select formatselect" name="archetype" value={archetype} onChange={e => setArchetype(e.target.value)}>
-          <option value="HO">Hyper Offense</option>
-          <option value="Stall">Stall</option>
-          <option value="BO">Bulky Offense</option>
-          <option value="Balance">Balance</option>
-          <option value="Weather">Weather</option>
-        </select>
-      </p>
+      <label className="label" htmlFor="archetype">Select Team Archetype:</label>
+      <select className="select formatselect" name="archetype" value={archetype} onChange={e => setArchetype(e.target.value)}>
+        <option value="HO">Hyper Offense</option>
+        <option value="Stall">Stall</option>
+        <option value="BO">Bulky Offense</option>
+        <option value="Balance">Balance</option>
+        <option value="Weather">Weather</option>
+      </select>
       <button className="big button" onClick={doCreateTeamClick}>
         Create Best Team
       </button>

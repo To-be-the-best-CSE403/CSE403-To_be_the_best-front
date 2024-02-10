@@ -5,29 +5,6 @@
   margin-block-end: 0;
 }
 
-#tobethebest-shadow-root h1 {
-  font-size: 24px;
-  padding: 10px;
-}
-
-#tobethebest-shadow-root h2 {
-  font-size: 18px;
-  padding: 5px;
-}
-
-#tobethebest-shadow-root button {
-  width: 80%;
-  height: 30px;
-  padding: 8px;
-  margin: 5px 0px;
-  font-size: 14px;
-  border-radius: 5px;
-  background-color: #6D9EEB;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
 #tobethebest-shadow-root {
   position: fixed;
   top: 56px;
@@ -43,13 +20,19 @@
   right: 0;
   width: 0;
   height: 150px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
   transform: translateY(-50%);
-  background-color: blue;
+  background-color: #4285F4;
   color: white;
   cursor: pointer;
   z-index: 9;
   transition: width 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
+}
+
+#tobethebest-toggle:hover {
+  background-color: #3367D6;
 }
 
 #tobethebest-toggle.active {
@@ -73,8 +56,8 @@
   width: 0px;
   height: calc(100% - 56px);
   z-index: 10;
-  background-color: rgb(185, 240, 255, 0.8);
   transition: width 0.3s ease, opacity 0.3s ease;
+  border-left: solid 1px #AAAAAA;
   overflow: hidden;
 }
 
@@ -86,6 +69,7 @@
 #tobethebest-sidebar__container {
   width: 100%;
   height: 100%;
+  background-color: rgba(242, 247, 250, 0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,10 +84,52 @@
   flex-direction: column;
   align-items: center;
 	border-radius: 10px;
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.2);
 	color: white;
 }
 
+#tobethebest-shadow-root button {
+  width: 80%;
+  padding: 5px;
+  margin: 5px 0;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #4285F4;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 #tobethebest-shadow-root button:hover {
-  background-color: red;
+  background-color: #3367D6;
+}
+
+#tobethebest-shadow-root select {
+  width: 80%;
+	height: 32px;
+	padding: 0 5px;
+	cursor: pointer;
+	border-radius: 4px;
+	border: 1px solid #888888;
+	box-shadow: inset 0 1px 0 #FFFFFF;
+	background: linear-gradient(to bottom,  #edf2f8,  #d7e3ec);
+	color: black;
+	box-sizing: border-box;
+}
+
+#tobethebest-shadow-root select:hover {
+  border-color: #555555;
+	background: #FFFFFF;
+	background: linear-gradient(to bottom,  #dce4ec,  #c6d3e0);
+}
+
+#tobethebest-shadow-root h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#tobethebest-shadow-root h2 {
+  font-size: 18px;
+  font-weight: bold;
 }
