@@ -1,4 +1,4 @@
-import { Teams } from '@pkmn/sim';
+import Teams from './team';
 
 // API endpoints
 const API_BASE_URL = 'https://tobethebest.vercel.app/api';
