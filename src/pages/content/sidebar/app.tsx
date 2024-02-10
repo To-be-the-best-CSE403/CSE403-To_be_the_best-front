@@ -1,4 +1,4 @@
-import { use, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createTeam } from '@src/api';
 
 export default function App() {
