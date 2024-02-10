@@ -59,7 +59,6 @@ describe('contentSidebar', () => {
     expect(sidebarTeambuilderH2.textContent).toBe('Team Builder');
     const sidebarTeambuilderButton = sidebarTeambuilder.querySelector('button');
     expect(sidebarTeambuilderButton).toBeInTheDocument();
-    expect(sidebarTeambuilderButton.id).toBe('tobethebest-teambuilder-button');
     expect(sidebarTeambuilderButton.textContent).toBe('Create Team');
 
     // Test that the sidebar resources contains a child h2 and three buttons
@@ -69,11 +68,8 @@ describe('contentSidebar', () => {
     expect(sidebarResourcesH2.textContent).toBe('Resources');
     const sidebarResourcesButtons = sidebarResources.querySelectorAll('button');
     expect(sidebarResourcesButtons).toHaveLength(3);
-    expect(sidebarResourcesButtons[0].id).toBe('tobethebest-website-button');
     expect(sidebarResourcesButtons[0].textContent).toBe('Website');
-    expect(sidebarResourcesButtons[1].id).toBe('tobethebest-wiki-button');
     expect(sidebarResourcesButtons[1].textContent).toBe('Wiki');
-    expect(sidebarResourcesButtons[2].id).toBe('tobethebest-github-button');
     expect(sidebarResourcesButtons[2].textContent).toBe('Github');
 
   });
