@@ -85,7 +85,8 @@
   align-items: center;
 	border-radius: 10px;
 	background: rgba(0, 0, 0, 0.2);
-	color: white;
+	color: black;
+  font-weight: bold;
 }
 
 #tobethebest-shadow-root button {
@@ -114,7 +115,6 @@
 	border: 1px solid #888888;
 	box-shadow: inset 0 1px 0 #FFFFFF;
 	background: linear-gradient(to bottom,  #edf2f8,  #d7e3ec);
-	color: black;
 	box-sizing: border-box;
 }
 
@@ -124,12 +124,18 @@
 	background: linear-gradient(to bottom,  #dce4ec,  #c6d3e0);
 }
 
+#tobethebest-shadow-root label {
+  font-size: 11px;
+  width: 80%;
+  text-align: left;
+}
+
 #tobethebest-shadow-root h1 {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 24px;
+  padding: 10px;
 }
 
 #tobethebest-shadow-root h2 {
   font-size: 18px;
-  font-weight: bold;
+  padding: 5px;
 }
