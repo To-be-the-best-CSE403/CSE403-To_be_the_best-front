@@ -3,12 +3,16 @@
 A Chrome extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) including features such as a team builder, damage calculator, and more! The extension aims to assist users in creating powerful teams, understanding move sets, and making informed decisions during battles.
 
 ## Quick Start
-- **Step 1**: Install the ToBeTheBest Extension
-  - **Firefox**: See latest release for Firefox
-  - **Chrome**: See latest release for Chrome
+- **Step 1**: Install `ToBeTheBest` Extension
+  - **Firefox**: [Latest Release on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/tobethebest/).
+  - **Chrome**: [Latest Release on Github](https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front/releases/).
+    - Download `tobethebest-chrome.zip` and unzip the file.
+    - Go to `chrome://extensions/` and enable "Developer mode" in the top right corner.
+    - Click `Load unpacked` and select the unzipped folder.
+
 - **Step 2**: Go to [Pokemon Showdown](https://play.pokemonshowdown.com/) and activate the extension. 
-  - **Firefox**: Go to extension setting and choose "Always Allow on play.pokemonshowdown.com".
-  - **Chrome**: Go to extension setting and allow the extension for play.pokemonshowdown.com.
+  - **Firefox**: Go to extension setting and choose `Always Allow on play.pokemonshowdown.com`.
+  - **Chrome**: Go to extension setting and allow the extension for `play.pokemonshowdown.com`.
 
 ## Features
 Learn more about the features of the Pokemon Showdown ToBeTheBest extension.
@@ -18,7 +22,13 @@ Learn more about the features of the Pokemon Showdown ToBeTheBest extension.
 - **Damage Calculator**: Calculate the damage of a move based on the Pokemon's stats and the opponent's stats.
 
 ## Usage
-- **Team Builder**: Click on the "Team Builder" button in the extension popup to open the team builder. It shows information about Pokemon usage and suggested movesets.
+Hover on the `ToBeTheBest` toggle button on the right side of the screen to show the extension's sidebar. The sidebar will appear with a transition and you can access the following features:
+
+- **Team Builder**: Choose a Team `Archetype` from the dropdown menu and click "Create Team" to generate a team tailored to your chosen strategy.
+- **Resources**: Access additional resources to enhance your Pokémon Showdown experience:
+  - **Website**: Visit the ToBeTheBest website for more information and updates
+  - **Wiki**: Explore the wiki for detailed guides and strategies.
+  - **Github**: Contribute to the project or explore the source code on GitHub.
 
 ## Repository Layout
 - public: contains the static files for the extension.
