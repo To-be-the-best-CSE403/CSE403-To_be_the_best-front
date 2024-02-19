@@ -1,6 +1,6 @@
 # ToBeTheBest Extension for Pokemon Showdown
 
-A Chrome extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) including features such as a team builder, damage calculator, and more! The extension aims to assist users in creating powerful teams, understanding move sets, and making informed decisions during battles.
+A browser extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) including features such as a team builder, damage calculator, and more! The extension aims to assist users in creating powerful teams, understanding move sets, and making informed decisions during battles.
 
 ## Quick Start
 - **Step 1**: Install `ToBeTheBest` Extension
@@ -29,6 +29,8 @@ Hover on the `ToBeTheBest` toggle button on the right side of the screen to show
   - **Website**: Visit the ToBeTheBest website for more information and updates
   - **Wiki**: Explore the wiki for detailed guides and strategies.
   - **Github**: Contribute to the project or explore the source code on GitHub.
+
+![Usage](design/Teambuilder.gif)
 
 ## Repository Layout
 - public: contains the static files for the extension.
@@ -146,25 +148,10 @@ There are two types of comments, JSDoc (`/** ... */`) and non-JSDoc ordinary com
 - Do use TypeScript's types as much as possible.
 - Do use `undefined` when necessary; **do not** use `null`.
 
+## Issues, feature requests and contributions 
+- If you come across a problem with the extension, please open an [issue](https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front/issues/new/choose) and choose the bug report template.
+- If you have a feature request, please open an [issue](https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front/issues/new/choose) with the feature request template.
+- Contributions are always welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
