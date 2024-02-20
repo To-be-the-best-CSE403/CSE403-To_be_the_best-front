@@ -1,6 +1,19 @@
 # ToBeTheBest Extension for Pokemon Showdown
 
-A browser extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) including features such as a team builder, damage calculator, and more! The extension aims to assist users in creating powerful teams, understanding move sets, and making informed decisions during battles.
+A browser extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) including features such as a teambuilder, usage rate stats and more! The extension aims to assist users in creating powerful teams, understanding move sets, and making informed decisions during battles. To learn more about ToBeTheBest, visit our [Website](https://tobethebest.vercel.app/).
+
+## Table of Contents
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Usage](#usage)
+- [Repository Layout](#repository-layout)
+- [For Developers](#for-developers)
+  - [Getting Started](#getting-started)
+  - [Building the Extension](#building-the-extension)
+  - [Testing](#testing)
+  - [Coding Guidelines](#coding-guidelines)
+- [Issues, Feature Requests and Contributions](#issues-feature-requests-and-contributions)
+- [License](#license)
 
 ## Quick Start
 - **Step 1**: Install `ToBeTheBest` Extension
@@ -33,11 +46,68 @@ Hover on the `ToBeTheBest` toggle button on the right side of the screen to show
 ![Usage](design/Teambuilder.gif)
 
 ## Repository Layout
-- public: contains the static files for the extension.
-- src: contains the source code for the extension.
-  - components: contains the React components for the extension.
-- configs
-  
+<details>
+<summary>design</summary>
+
+    # Design documents for the project
+    ├── README.md              
+    └── uml                             # UML diagrams
+        └── UI_Components.drawio.png
+
+</details>
+<details>
+<summary>public</summary>
+
+- Contains public assets used in the application.
+
+</details>
+
+
+<details>
+<summary>src</summary>
+
+    # Source code for the extension
+    ├── api.ts                        # API Endpoints
+    ├── pages                         # Pages for the extension
+    │   ├── background                # Background scripts       
+    │   ├── content                   # Content scripts
+    │   │   ├── injected                    
+    │   │   └── sidebar               
+    │   └── popup                     # Popup page for the extension       
+    └── shared                        # Shared components
+
+</details>
+
+<details>
+<summary>test</summary>
+
+- Setup the test environment for the extension.
+
+</details>
+
+<details>
+<summary>utils</summary>
+
+    # Extension boilerplate for Chrome and Firefox using Vite
+    # See: https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite
+
+    ├── manifest-parser                      # Parse manifest.json
+    ├── plugins                              # Plugins for Vite    
+    │   ├── add-hmr.ts                       # Hot module reloading
+    │   ├── custom-dynamic-import.ts         # Custom dynamic import
+    │   ├── inline-vite-preload-script.ts
+    │   ├── make-manifest.ts
+    │   └── watch-rebuild.ts
+    └── reload                               # Reloading mechanism
+        ├── injections                       # Injected scripts 
+        ├── interpreter                      # Interpreter for injected scripts  
+        ├── initReloadClient.ts
+        ├── initReloadServer.ts
+        ├── constant.ts
+        └── utils.ts
+
+</details>
+
 
 ## For Developers
 
