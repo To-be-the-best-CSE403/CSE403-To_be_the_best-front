@@ -1,31 +1,37 @@
 import { createRoot } from 'react-dom/client';
-import App from '@pages/content/injected/app';
+import { TeambuilderApp, MovesuggestionApp } from '@pages/content/injected/app';
 import refreshOnUpdate from 'virtual:reload-on-update-in-view';
+import { ReactNode } from 'react';
 
 refreshOnUpdate('pages/content');
 
-let root = null;
+const TEAMBUILDER_PARENT = 'teampane';
+const TEAMBUILDER_ROOT = 'tobethebest-teampane';
 
-const createTeampane = (teampane: Element) => {
-  root = document.createElement('div');
-  root.id = 'tobethebest-teampane-root';
-  teampane.appendChild(root);
+const MOVESUGGESTION_PARENT = 'movecontrols';
+const MOVESUGGESTION_ROOT = 'movesuggestion';
 
-  createRoot(root).render(<App />);
-  console.log('tobethebest create teampane');
+const injectInto = (parent: Element, rootId: string, app: ReactNode) => {
+  if (document.getElementById(rootId)) {
+    return;
+  }
+  const root = document.createElement('div');
+  root.id = rootId;
+  parent.appendChild(root);
+
+  createRoot(root).render(app);
+  console.log(`tobethebest create ${rootId}`);
 };
 
 const observer = new MutationObserver(mutations => {
-  const teampane = document.getElementsByClassName('teampane')[0];
+  const teampane = document.getElementsByClassName(TEAMBUILDER_PARENT)[0];
   if (teampane) {
-    mutations.forEach(mutation => {
-      if (mutation.addedNodes.length) {
-        root = document.getElementById('tobethebest-teampane-root');
-        if (!root) {
-          createTeampane(teampane);
-        }
-      }
-    });
+    injectInto(teampane, TEAMBUILDER_ROOT, <TeambuilderApp />);
+  }
+
+  const movecontrols = document.getElementsByClassName(MOVESUGGESTION_PARENT)[0];
+  if (movecontrols) {
+    injectInto(movecontrols, MOVESUGGESTION_ROOT, <MovesuggestionApp />);
   }
 });
 

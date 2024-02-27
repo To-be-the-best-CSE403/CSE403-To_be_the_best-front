@@ -22,8 +22,9 @@
       "@assets/*": ["src/assets/*"],
       "@pages/*": ["src/pages/*"],
       "virtual:reload-on-update-in-background-script": ["./src/global.d.ts"],
-      "virtual:reload-on-update-in-view": ["./src/global.d.ts"]
+      "virtual:reload-on-update-in-view": ["./src/global.d.ts"],
+      "react": ["./node_modules/@types/react"]
     }
   },
-  "include": ["src", "test", "utils", "vite.config.ts", "node_modules/@types"]
+  "include": ["src", "typing", "test", "utils", "vite.config.ts", "node_modules/@types"]
 }
