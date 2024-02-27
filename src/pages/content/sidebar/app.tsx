@@ -30,13 +30,11 @@ export default function App() {
         data-testid="test-tobethebest-sidebar"
         className={toggled ? 'active' : ''}
         style={{ background: window.getComputedStyle(document.body).getPropertyValue('background') }}
-        onMouseLeave={handleToggle}>
+        //onMouseLeave={handleToggle}
+        >
         <div id="tobethebest-sidebar__container" data-testid="test-tobethebest-sidebar__container">
-          <div
-            id="tobethebest-sidebar-header"
-            data-testid="test-tobethebest-sidebar-header"
-            className="tobethebest-sidebar__component">
-            <h1>ToBeTheBest</h1>
+          <div id="tobethebest-sidebar-header" data-testid="test-tobethebest-sidebar-header">
+            ToBeTheBest
           </div>
           <div
             id="tobethebest-sidebar-teambuilder"

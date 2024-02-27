@@ -1,11 +1,11 @@
-#tobethebest-shadow-root * {
+#tobethebest-root * {
   margin: 0;  /* Reset the default margin */
   padding: 0; /* Reset the default padding */
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-#tobethebest-shadow-root {
+#tobethebest-root {
   position: fixed;
   top: 56px;
   right: 0px;
@@ -26,7 +26,7 @@
   background-color: #4285F4;
   color: white;
   cursor: pointer;
-  z-index: 9;
+  z-index: 100;
   transition: width 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
@@ -55,14 +55,14 @@
   right: 0px;
   width: 0px;
   height: calc(100% - 56px);
-  z-index: 10;
+  z-index: 101;
   transition: width 0.3s ease, opacity 0.3s ease;
   border-left: solid 1px #AAAAAA;
   overflow: hidden;
 }
 
 #tobethebest-sidebar.active {
-  width: 250px;
+  width: 400px;
   opacity: 1;
 }
 
@@ -77,7 +77,7 @@
   row-gap: 20px;
 }
 
-#tobethebest-shadow-root .tobethebest-sidebar__component {
+#tobethebest-root .tobethebest-sidebar__component {
   width: 80%;
   padding: 5px 0px;
   display: flex;
@@ -89,7 +89,7 @@
   font-weight: bold;
 }
 
-#tobethebest-shadow-root button {
+#tobethebest-root button {
   width: 80%;
   padding: 5px;
   margin: 5px 0;
@@ -102,11 +102,11 @@
   transition: background-color 0.3s ease;
 }
 
-#tobethebest-shadow-root button:hover {
+#tobethebest-root button:hover {
   background-color: #3367D6;
 }
 
-#tobethebest-shadow-root select {
+#tobethebest-root select {
   width: 80%;
 	height: 32px;
 	padding: 0 5px;
@@ -118,24 +118,24 @@
 	box-sizing: border-box;
 }
 
-#tobethebest-shadow-root select:hover {
+#tobethebest-root select:hover {
   border-color: #555555;
 	background: #FFFFFF;
 	background: linear-gradient(to bottom,  #dce4ec,  #c6d3e0);
 }
 
-#tobethebest-shadow-root label {
+#tobethebest-root label {
   font-size: 11px;
   width: 80%;
   text-align: left;
 }
 
-#tobethebest-shadow-root h1 {
+#tobethebest-root h1 {
   font-size: 24px;
   padding: 10px;
 }
 
-#tobethebest-shadow-root h2 {
+#tobethebest-root h2 {
   font-size: 18px;
   padding: 5px;
 }

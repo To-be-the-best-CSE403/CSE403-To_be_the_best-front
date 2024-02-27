@@ -54,7 +54,8 @@ export default defineConfig({
       input: {
         background: resolve(pagesDir, 'background', 'index.ts'),
         contentSidebar: resolve(pagesDir, 'content', 'sidebar', 'index.ts'),
-        contentInjected: resolve(pagesDir, 'content', 'injected', 'index.ts'),
+        contentInjected: resolve(pagesDir, 'content', 'injected', 'index.ts'), 
+        contentStyle: resolve(pagesDir, 'content', 'style.scss'), 
         popup: resolve(pagesDir, 'popup', 'index.html'), 
       },
       output: {

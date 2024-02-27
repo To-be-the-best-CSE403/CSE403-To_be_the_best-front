@@ -31,6 +31,7 @@ const manifest = {
     {
       matches: ['https://play.pokemonshowdown.com/*'],
       js: ['src/pages/contentSidebar/index.js', 'src/pages/contentInjected/index.js'],
+      css: ['assets/css/contentStyle<KEY>.chunk.css'],
       run_at: 'document_end',
     },
   ],
