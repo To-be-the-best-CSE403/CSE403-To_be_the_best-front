@@ -45,11 +45,7 @@ export function MovesuggestionApp() {
 
   const doMoveSuggestionClick = () => {
     console.log('tobethebest movesuggestion clicked');
-    const sidebar = document.getElementById('tobethebest-sidebar');
-    if (sidebar) {
-      console.log('tobethebest sidebar found');
-      sidebar.classList.add('active');
-    }
+    window.postMessage({ type: 'MOVESUGGESTION_CLICKED' }, '*'); 
   };
 
   return (

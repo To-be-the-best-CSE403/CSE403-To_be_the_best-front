@@ -17,9 +17,11 @@ $pink: #e91e63; // MD Pink 500
 $orange: #ff9800; // MD Orange 500
 $cyan: #00acc1; // MD Cyan 500
 
-$light-red: #ff5252; // MD Light Red 500
-$light-green: #8bc34a; // MD Light Green 500
-$light-blue: #03a9f4; // MD Light Blue 500
+$red-light: #ff5252; // MD Light Red 500
+$green-light: #8bc34a; // MD Light Green 500
+$blue-light: #03a9f4; // MD Light Blue 500
+
+$red-dark: #b71c1c; // MD Dark Red 900
 
 $transparent-black: rgba(0, 0, 0, 0);
 $transparent-white: rgba(255, 255, 255, 0);
@@ -99,6 +101,21 @@ $showdown-background-dark: #444444;
       opacity: 1;
     }
 
+    &__close {
+      position: absolute;
+      text-align: center;
+      top: 0;
+      right: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 100%;
+      background-color: $gray;
+
+      &:hover {
+        background-color: $red-dark;
+      }
+    }
+
     &__container {
       width: 100%;
       height: 100%;
@@ -106,13 +123,12 @@ $showdown-background-dark: #444444;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 20px;
-      row-gap: 20px;
     }
 
     &-header {
       font-weight: 700;
       font-size: 32px;
+      margin: 20px 0px;
       color: $transparent;
       background: linear-gradient(to right, $blue, $cyan);
       background-clip: text;
@@ -126,14 +142,49 @@ $showdown-background-dark: #444444;
 
     &-resources {
       button {
-        background: linear-gradient(to bottom, $green, $light-green);
+        background: linear-gradient(to bottom, $green, $green-light);
+      }
+    }
+
+    &-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: fit-content;
+      background-color: $gray-light;
+    }
+    &-tabs {
+      background: linear-gradient(to bottom, #f6f6f6, #d3d3d3);
+      color: black;
+      font-size: 14px;
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+      }
+      li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 100%;
+        border: 1px solid $gray-light;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $gray-lighter;
+        }
       }
     }
   }
 
   .tobethebest-sidebar__component {
     width: 270px;
-    padding: 8px;
+    margin: 20px 0px;
+    padding: 8px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,7 +199,7 @@ $showdown-background-dark: #444444;
   button {
     width: 200px;
     padding: 4px;
-    margin: 6px 0;
+    margin: 6px;
     font-size: 14px;
     font-weight: bold;
     border: none;

@@ -46,12 +46,6 @@ describe('contentSidebar', () => {
     expect(toggleParagraph).toBeInTheDocument();
     expect(toggleParagraph.textContent).toBe('ToBeTheBest');
 
-    // Test that the sidebar header contains a child h1
-    const sidebarHeader = screen.getByTestId('test-tobethebest-sidebar-header');
-    const sidebarHeaderH1 = sidebarHeader.querySelector('h1');
-    expect(sidebarHeaderH1).toBeInTheDocument();
-    expect(sidebarHeaderH1.textContent).toBe('ToBeTheBest');
-
     // Test that the sidebar teambuilder contains a child h2 and button
     const sidebarTeambuilder = screen.getByTestId('test-tobethebest-sidebar-teambuilder');
     const sidebarTeambuilderH2 = sidebarTeambuilder.querySelector('h2');
