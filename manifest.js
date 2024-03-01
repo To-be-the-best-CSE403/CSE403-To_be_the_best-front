@@ -17,11 +17,11 @@ const manifest = {
   description: '__MSG_extensionDescription__',
   permissions: ['activeTab', 'storage', 'scripting', 'webNavigation'],
   icons: {
-    128: 'icon-128.png',
+    128: 'tobethebest-128.png',
   },
   action: {
     default_popup: 'src/pages/popup/index.html',
-    default_icon: 'icon-34.png',
+    default_icon: 'tobethebest-32.png',
   },
   background: {
     service_worker: 'src/pages/background/index.js',
@@ -32,12 +32,11 @@ const manifest = {
       matches: ['https://play.pokemonshowdown.com/*'],
       js: ['src/pages/contentSidebar/index.js', 'src/pages/contentInjected/index.js'],
       css: ['assets/css/contentStyle<KEY>.chunk.css'],
-      run_at: 'document_end',
-    },
+     },
   ],
   web_accessible_resources: [
     {
-      resources: ['assets/js/*.js', 'assets/css/*.css', 'icon-128.png', 'icon-34.png'],
+      resources: ['src/pages/main/*', 'assets/js/*.js', 'assets/css/*.css', 'tobethebest-128.png', 'tobethebest-32.png'],
       matches: ['https://play.pokemonshowdown.com/*'],
     },
   ],
