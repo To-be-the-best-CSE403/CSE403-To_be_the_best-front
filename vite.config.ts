@@ -44,15 +44,14 @@ export default defineConfig({
   publicDir,
   build: {
     outDir,
-    /** Can slow down build speed. */
-    // sourcemap: isDev,
+    sourcemap: true,
     minify: isProduction,
     modulePreload: false,
     reportCompressedSize: isProduction,
     emptyOutDir: !isDev,
     rollupOptions: {
       input: {
-        background: resolve(pagesDir, 'background', 'index.ts'),
+        main: resolve(pagesDir, 'main.ts'),
         contentSidebar: resolve(pagesDir, 'content', 'sidebar', 'index.ts'),
         contentInjected: resolve(pagesDir, 'content', 'injected', 'index.ts'), 
         contentStyle: resolve(pagesDir, 'content', 'style.scss'), 

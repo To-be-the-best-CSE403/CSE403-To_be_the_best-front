@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { PREFIX } from '@src/constants';
 import HomePage from '@root/src/components/HomePage';
 import MovePage from '@root/src/components/MovePage';
 
@@ -6,7 +7,7 @@ type Tab = 'home' | 'move' | 'damage' | 'settings';
 
 export default function App() {
   useEffect(() => {
-    console.log('tobethebest sidebar loaded');
+    console.log(`${PREFIX} Loading sidebar`);
 
     const handleMessage = event => {
       if (event.data && event.data.type === 'MOVESUGGESTION_CLICKED') {

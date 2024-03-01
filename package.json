@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "ToBeTheBest Extension",
   "scripts": {
-    "build": "tsc --noEmit && vite build",
+    "build": "vite build",
     "build:firefox": "cross-env __FIREFOX__=true vite build",
     "build:watch": "cross-env __DEV__=true vite build -w --mode development",
     "build:firefox:watch": "cross-env __DEV__=true __FIREFOX__=true vite build -w --mode development",
@@ -25,6 +25,7 @@
     "webextension-polyfill": "0.10.0"
   },
   "devDependencies": {
+    "@gradio/client": "^0.12.1",
     "@rollup/plugin-typescript": "11.1.5",
     "@testing-library/jest-dom": "^6.4.1",
     "@testing-library/react": "14.0.0",

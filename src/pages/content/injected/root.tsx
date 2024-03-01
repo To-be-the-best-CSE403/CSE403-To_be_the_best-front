@@ -1,7 +1,9 @@
 import { createRoot } from 'react-dom/client';
-import { TeambuilderApp, MovesuggestionApp } from '@pages/content/injected/app';
-import refreshOnUpdate from 'virtual:reload-on-update-in-view';
 import { ReactNode } from 'react';
+import { TeambuilderApp, MovesuggestionApp } from '@pages/content/injected/app';
+import { PREFIX } from '@src/constants';
+import refreshOnUpdate from 'virtual:reload-on-update-in-view';
+import browser from 'webextension-polyfill';
 
 refreshOnUpdate('pages/content');
 
@@ -20,7 +22,7 @@ const injectInto = (parent: Element, rootId: string, app: ReactNode) => {
   parent.appendChild(root);
 
   createRoot(root).render(app);
-  console.log(`tobethebest create ${rootId}`);
+  console.log(`${PREFIX} Injecting ${rootId}`);
 };
 
 const observer = new MutationObserver(mutations => {
@@ -36,3 +38,15 @@ const observer = new MutationObserver(mutations => {
 });
 
 observer.observe(document.body, { childList: true, subtree: true });
+
+const script = document.createElement('script');
+const url = browser.runtime.getURL('src/pages/main/index.js');
+const extensionId = url.split('/')[2];
+
+script.src = url;
+script.id = 'tobethebest-script';
+script.setAttribute('async', 'true');
+script.setAttribute('data-extension-id', extensionId);
+
+console.log(`${PREFIX} Injecting ${script.id}`);
+document.body.appendChild(script);
