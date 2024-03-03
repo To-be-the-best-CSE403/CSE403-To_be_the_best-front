@@ -1,3 +1,4 @@
+import { get } from 'http';
 import Teams from './team';
 
 // API endpoints
@@ -13,9 +14,7 @@ export const createTeam = (archetype: string) => {
     const url = new URL(API_ENDPOINTS.TEAMBUILDER);
     url.searchParams.append('archetype', archetype);
 
-    fetch(url)
-      .then(response => response.json())
-      .then(data => {
+    getTeam(archetype).then(data => {
         console.log('[ToBeTheBest] Team created:', data);
 
         const teamName = 'gen9ou]ToBeTheBest-' + archetype;
@@ -32,3 +31,10 @@ export const createTeam = (archetype: string) => {
         console.error('Error:', error);
       });
   };
+
+export const getTeam = (archetype: string) => {
+  const url = new URL(API_ENDPOINTS.TEAMBUILDER);
+  url.searchParams.append('archetype', archetype);
+
+  return fetch(url).then(response => response.json());
+}

@@ -18,7 +18,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@pkmn/protocol": "^0.6.19",
+    "@pkmn/sim": "^0.8.9",
+    "@pkmn/randoms": "0.8.9",
     "construct-style-sheets-polyfill": "3.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

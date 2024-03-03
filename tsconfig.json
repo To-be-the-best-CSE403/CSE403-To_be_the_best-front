@@ -16,16 +16,16 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "dom.iterable", "esnext"],
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["./src/global.d.ts", "node_modules/@types"],
+    "typeRoots": ["types/global.d.ts", "node_modules/@types"],
     "paths": {
       "@root/*": ["./*"],
       "@src/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@pages/*": ["src/pages/*"],
-      "virtual:reload-on-update-in-background-script": ["./src/global.d.ts"],
-      "virtual:reload-on-update-in-view": ["./src/global.d.ts"],
+      "virtual:reload-on-update-in-background-script": ["types/global.d.ts"],
+      "virtual:reload-on-update-in-view": ["types/global.d.ts"],
       "react": ["./node_modules/@types/react"]
     }
   },
-  "include": ["src", "typing", "test", "utils", "vite.config.ts", "node_modules/@types"]
+  "include": ["src", "types", "test", "utils", "vite.config.ts", "node_modules/@types"]
 }
