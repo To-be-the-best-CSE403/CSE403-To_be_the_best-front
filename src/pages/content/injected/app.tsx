@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { createTeam } from '@src/api';
+import { MESSAGES } from '@src/messages';
 
 export function TeambuilderApp() {
-  useEffect(() => {
-    console.log('tobethebest teampane injected');
-  }, []);
-
   const doCreateTeamClick = () => {
     createTeam(archetype);
   };
@@ -38,21 +35,28 @@ export function TeambuilderApp() {
   );
 }
 
-export function MovesuggestionApp() {
-  useEffect(() => {
-    console.log('tobethebest movesuggestion injected');
-  }, []);
-
-  const doMoveSuggestionClick = () => {
-    console.log('tobethebest movesuggestion clicked');
-    window.postMessage({ type: 'MOVESUGGESTION_CLICKED' }, '*'); 
+export function BattlesuggestionApp() {
+  const doClick = () => {
+    window.postMessage({ type: MESSAGES.BATTLESUGGESTION_OPEN }, '*'); 
   };
 
   return (
-    <div id="movesuggestion-container">
-      <button id="movesuggestion-button" className="button big" onClick={doMoveSuggestionClick}>
+    <div id="battlesuggestion-container">
+      <button id="battlesuggestion-button" className="button big" onClick={doClick}>
         Hint Moves
       </button>
     </div>
+  );
+}
+
+export function TrainerApp() {
+  const doClick = () => {
+    window.postMessage({ type: MESSAGES.TRAINER_OPEN }, '*');
+  };
+
+  return (
+    <p>
+      <button id="trainer-button" className='button mainmenu2' onClick={doClick}>Trainer</button>
+    </p>
   );
 }

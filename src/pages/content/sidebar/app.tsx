@@ -1,18 +1,30 @@
 import { useEffect, useState } from 'react';
 import { PREFIX } from '@src/constants';
-import HomePage from '@root/src/components/HomePage';
-import MovePage from '@root/src/components/MovePage';
+import { MESSAGES } from '@src/messages';
+import HomePage from '@src/components/HomePage';
+import BattlePage from '@src/components/BattlePage';
+import TrainerPage from '@src/components/TrainerPage';
 
-type Tab = 'home' | 'move' | 'damage' | 'settings';
+type Tab = 'home' | 'battle' | 'trainer' | 'settings';
 
 export default function App() {
   useEffect(() => {
     console.log(`${PREFIX} Loading sidebar`);
 
     const handleMessage = event => {
-      if (event.data && event.data.type === 'MOVESUGGESTION_CLICKED') {
-        setToggled(true);
-        handleTabChange('move');
+      if (!event.data) {
+        return;
+      }
+      switch (event.data.type) {
+        case MESSAGES.BATTLESUGGESTION_OPEN:
+          setToggled(true);
+          handleTabChange('battle');
+          break;
+
+        case MESSAGES.TRAINER_OPEN:
+          setToggled(true);
+          handleTabChange('trainer');
+          break;
       }
     };
 
@@ -38,10 +50,10 @@ export default function App() {
     switch (tab) {
       case 'home':
         return <HomePage />;
-      case 'move':
-        return <MovePage />;
-      case 'damage':
-        return <div>Damage</div>;
+      case 'battle':
+        return <BattlePage />;
+      case 'trainer':
+        return <TrainerPage />;
       case 'settings':
         return <div>Settings</div>;
     }
@@ -56,13 +68,13 @@ export default function App() {
               <i className="fa fa-home"></i>
               Home
             </li>
-            <li onClick={() => handleTabChange('move')}>
-              <i className="fa fa-info-circle"></i>
-              Move
-            </li>
-            <li onClick={() => handleTabChange('damage')}>
+            <li onClick={() => handleTabChange('battle')}>
               <i className="fa fa-calculator"></i>
-              Damage
+              Battle
+            </li>
+            <li onClick={() => handleTabChange('trainer')}>
+              <i className="fa fa-info"></i>
+              Trainer
             </li>
             <li onClick={() => handleTabChange('settings')}>
               <i className="fa fa-cogs"></i>
