@@ -268,7 +268,7 @@ $showdown-background-dark: #444444;
         0 0 1px rgba(0, 0, 0, 0.16),
         0 0 16px rgba(66, 66, 66, 0.16);
 
-      &__row {
+      .row {
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -276,21 +276,22 @@ $showdown-background-dark: #444444;
         align-items: center;
       }
 
-      &__header {
+      .top {
         width: 100%;
         text-align: center;
         font-size: 12px;
-        margin: 10px 0px;
+        padding: 10px 0px;
+        background: linear-gradient(to bottom, #f6f6f6, #d3d3d3);
       }
 
-      &__item {
+      .item {
         width: 100%;
         text-align: center;
         font-size: 11px;
-        margin: 5px 0px;
+        padding: 5px 0px;
       }
     }
-    &-pokemon {
+    .pokemon {
       width: 100%;
       padding: 10px;
       display: flex;

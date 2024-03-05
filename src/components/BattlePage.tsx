@@ -1,4 +1,3 @@
-import { Dex } from '@pkmn/sim';
 import { Pokemon, Move, Generations, Result, calculate } from '@smogon/calc';
 import { getMoveEffectiveness } from '@smogon/calc/src/mechanics/util';
 import { GEN } from '@src/constants';
@@ -39,13 +38,13 @@ export default function BattlePage({ attacker, defender, moves }: BattlePageProp
       const effectiveness = damage === 'N/A' ? 'N/A' : displayEffectiveness(moveEffectiveness);
 
       return (
-        <div id="tobethebest-movesuggestion-grid__row" key={i}>
-          <div id="tobethebest-movesuggestion-grid__item">
+        <div className="row" key={i}>
+          <div className="item">
             <p>{move.name}</p>
             <p>{displayType(move.type)}</p>
             </div>
-          <div id="tobethebest-movesuggestion-grid__item">{effectiveness}</div>
-          <div id="tobethebest-movesuggestion-grid__item">{damage}</div>
+          <div className="item">{effectiveness}</div>
+          <div className="item">{damage}</div>
         </div>
       );
     });
@@ -53,7 +52,7 @@ export default function BattlePage({ attacker, defender, moves }: BattlePageProp
 
   const displayPokemon = (pokemon: Pokemon) => {
     return (
-      <div id="tobethebest-movesuggestion-pokemon">
+      <div className="pokemon">
         <p>{pokemon.name}</p>
         <p>{pokemon.types.map(type => displayType(type))}</p>
       </div>
@@ -82,9 +81,9 @@ export default function BattlePage({ attacker, defender, moves }: BattlePageProp
             {displayPokemon(defender)}
           </div>
           <div id="tobethebest-movesuggestion-grid">
-            <div id="tobethebest-movesuggestion-grid__row">
-              {['Moves', 'Effectiveness', 'Damage'].map(header => (
-                <div id="tobethebest-movesuggestion-grid__header">{header.toUpperCase()}</div>
+            <div className="row">
+              {['Moves', 'Effectiveness', 'Damage'].map((header, i) => (
+                <div className="top" key={i}>{header.toUpperCase()}</div>
               ))}
             </div>
             {displayMoves()}
@@ -101,7 +100,7 @@ export default function BattlePage({ attacker, defender, moves }: BattlePageProp
       <div id="tobethebest-sidebar-header" data-testid="test-tobethebest-sidebar-header">
         Battle
       </div>
-      <div id="tobethebest-movesuggestion" className="tobethebest-sidebar__component">
+      <div id="tobethebest-movesuggestion" className="tobethebest-sidebar__component" data-testid="test-tobethebest-movesuggestion">
         <h2>Move Suggestion</h2>
         {displaySuggestions()}
       </div>
