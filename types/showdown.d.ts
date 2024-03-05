@@ -14,19 +14,5 @@ declare namespace Showdown {
   interface ClientApp {
     receive(data: string): void;
     send(data: string, room: string): void;
-  }
-
-  interface Dex {
-    /**
-     * @default 9
-     */
-    readonly gen: number;
-
-    /**
-     * @default 'gen9'
-     */
-    readonly modid: string;
-
-    getPokemonIcon(pokemon?: string | Pokemon | ServerPokemon | PokemonSet, facingLeft?: boolean): string;
-  }
+  } 
 }
