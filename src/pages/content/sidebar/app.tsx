@@ -5,6 +5,7 @@ import { MESSAGES } from '@src/messages';
 import HomePage from '@src/components/HomePage';
 import BattlePage from '@src/components/BattlePage';
 import TrainerPage from '@src/components/TrainerPage';
+import SettingsPage from '@root/src/components/SettingsPage';
 
 type Tab = 'home' | 'battle' | 'trainer' | 'settings';
 
@@ -92,7 +93,7 @@ export default function App() {
       case 'trainer':
         return <TrainerPage />;
       case 'settings':
-        return <div>Settings</div>;
+        return <SettingsPage />; 
     }
   };
 
