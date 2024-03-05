@@ -1,5 +1,5 @@
-import { PREFIX } from './constants';
-import { MESSAGES } from './messages';
+import { PREFIX, PREFIX_MESSAGE } from './constants';
+import { MESSAGES, sendFromBot } from './messages';
 import { initBattle, sendRequest } from './protocol/BattleProtocol';
 import { AnyObject, BattleStreams, PokemonSet, RandomPlayerAI, Streams } from '@pkmn/sim';
 
@@ -13,7 +13,7 @@ export const battleBot = (playerName: string, team: PokemonSet[]) => {
   console.log(`${PREFIX} Challenging bot`);
   const botName = 'ToBeTheBest_Bot';
 
-  window.postMessage({ type: MESSAGES.FROM_BOT, data: initBattle(playerName, botName) }, '*');
+  sendFromBot(initBattle(playerName, botName));
 
   const p1 = { name: playerName, team };
   const p2 = { name: botName, team };
@@ -37,9 +37,8 @@ const simulateBattle = (p1spec: PlayerSpec, p2spec: PlayerSpec) => {
 
   void (async () => {
     for await (const chunk of streams.omniscient) {
-      console.log(chunk);
-      const message = `>battle-gen9randombattle-tobethebest\n${chunk.replace(/\|t:.+\n?/gm, '')}`;
-      window.postMessage({ type: MESSAGES.FROM_BOT, data: message }, '*');
+      const message = `${chunk.replace(/\|t:.+\n?/gm, '')}`;  // Remove timestamps messages
+      sendFromBot(message);
     }
   })();
 
@@ -60,11 +59,9 @@ class Player extends BattleStreams.BattlePlayer {
       return;
     }
 
-    console.log(`Player received message ${JSON.stringify(event.data)}`);
-
-    const data = event.data.data;
+    const message = event.data.message;
     const regexCmd = /^\/choose\s+(\w+)\s+(\d+)/;
-    const matchCmd = data.match(regexCmd);
+    const matchCmd = message.match(regexCmd);
 
     if (matchCmd) {
       const cmd = matchCmd[1];
@@ -74,15 +71,14 @@ class Player extends BattleStreams.BattlePlayer {
   };
 
   receiveRequest(request: AnyObject) {
-    console.log(`Player received request ${JSON.stringify(request)}`);
     if (request.wait) {
       // wait request
     } else if (request.forceSwitch) {
       // switch request
-      window.postMessage({ type: MESSAGES.FROM_BOT, data: sendRequest(request) }, '*');
+      sendFromBot(sendRequest(request));
     } else if (request.active) {
       // move request
-      window.postMessage({ type: MESSAGES.FROM_BOT, data: sendRequest(request) }, '*');
+      sendFromBot(sendRequest(request));
     } else {
       // team preview
     }

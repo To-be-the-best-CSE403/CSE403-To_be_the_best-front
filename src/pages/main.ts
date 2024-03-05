@@ -7,7 +7,6 @@ console.log('[ToBeTheBest] Starting main script');
 const appReceive = app.receive.bind(app) as typeof app.receive;
 
 app.receive = (data: string) => {
-  console.log('[ToBeTheBest] Received:', data);
   appReceive(data);
 };
 
@@ -15,8 +14,8 @@ const appSend = app.send.bind(app) as typeof app.send;
 
 app.send = (data: string, room: string) => {
   if (room && room.match(/tobethebest/)) {
-    console.log('[ToBeTheBest] Send from player', data);
-    window.postMessage({ type: 'FROM_PLAYER', data }, '*');
+    console.log('[ToBeTheBest] [Message] Sending from player:\n', data);
+    window.postMessage({ type: 'FROM_PLAYER', message: data }, '*');
   } else {
     appSend(data, room);
   }
@@ -27,7 +26,9 @@ const handleFromBotMessage = (event: MessageEvent) => {
     return;
   }
 
-  const data = event.data.data;
+  const room = event.data.room;
+  const message = event.data.message;
+  const data = `>${room}\n${message}`
   app.receive(data);
 }
 
