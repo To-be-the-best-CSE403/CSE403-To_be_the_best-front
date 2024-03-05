@@ -1,7 +1,7 @@
 {
   "name": "tobethebest-extension",
-  "version": "1.0.0",
-  "description": "ToBeTheBest Extension",
+  "version": "2.0.0",
+  "description": "ToBeTheBest Extension For Pokemon Showdown",
   "scripts": {
     "build": "vite build",
     "build:firefox": "cross-env __FIREFOX__=true vite build",
