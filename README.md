@@ -17,7 +17,10 @@ A browser extension for [Pokemon Showdown](https://play.pokemonshowdown.com/) in
 
 ## Quick Start
 - **Step 1**: Install `ToBeTheBest` Extension
-  - **Firefox**: [Latest Release on Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/tobethebest/).
+  - **Firefox**: [Latest Release on Github](https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front/releases/)
+    - Download `tobethebest-firefox.zip` and unzip the file.
+    - Go to `about:debugging#/runtime/this-firefox`.
+    - Click `Load Temporary Add-on...` and select the unzipped folder.
   - **Chrome**: [Latest Release on Github](https://github.com/To-be-the-best-CSE403/CSE403-To_be_the_best-front/releases/).
     - Download `tobethebest-chrome.zip` and unzip the file.
     - Go to `chrome://extensions/` and enable "Developer mode" in the top right corner.

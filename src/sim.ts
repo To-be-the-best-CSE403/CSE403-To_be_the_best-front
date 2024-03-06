@@ -1,8 +1,7 @@
-import { PREFIX, PREFIX_MESSAGE } from './constants';
+import { PREFIX } from './constants';
 import { MESSAGES, sendFromBot } from './messages';
 import { initBattle, sendRequest } from './protocol/BattleProtocol';
 import { AnyObject, BattleStreams, PokemonSet, RandomPlayerAI, Streams } from '@pkmn/sim';
-
 /**
  * Challenge a bot to a battle
  * @param playerName the name of the player

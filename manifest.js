@@ -23,10 +23,6 @@ const manifest = {
     default_popup: 'src/pages/popup/index.html',
     default_icon: 'tobethebest-32.png',
   },
-  background: {
-    service_worker: 'src/pages/background/index.js',
-    type: 'module',
-  },
   content_scripts: [
     {
       matches: ['https://play.pokemonshowdown.com/*'],
